@@ -105,7 +105,7 @@ rp.plot <- function(rp.object,
       if(rp.object@options$max.lag - rp.object@options$min.lag + 1 > plot.lags)
         max.lag <- rp.object@options$min.lag + plot.lags - 1
       
-      for(lag in rp.object@options$min.lag:max.lag) {
+      for(lag in rp.object@options$min.lag:rp.object@options$max.lag) {
         r <- rp.object@coefficients[obs,paste0("lag",lag)]
         if(is.na(r))
           r <- "NA"
